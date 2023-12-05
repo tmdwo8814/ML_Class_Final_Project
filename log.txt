@@ -1,0 +1,25 @@
+test1
+model : custom CNN
+aug : x
+epochs : 50
+batch : 8
+result(train, val) : 0.99, 0.85 (17epoch 부터 나온 성능)
+
+--> 10epoch으로 limit을 두고 augmentation만으로 성능 테스트를 두어야겠음
+
+test2
+model : custom CNN
+aug : x
+epochs : 10
+batch : 8
+train Loss: 0.3700 Acc: 0.8839
+valid Loss: 0.7251 Acc: 0.7458
+
+test3
+model : custom CNN
+aug : RandomHorizontalFlip
+epochs : 10
+batch : 8
+train Loss: 0.4603 Acc: 0.8387
+valid Loss: 0.9101 Acc: 0.5932
+
