@@ -3,23 +3,110 @@ model : custom CNN
 aug : x
 epochs : 50
 batch : 8
-result(train, val) : 0.99, 0.85 (17epoch 부터 나온 성능)
-
---> 10epoch으로 limit을 두고 augmentation만으로 성능 테스트를 두어야겠음
+train Loss: 0.0035 Acc: 0.9957
+valid Loss: 1.1809 Acc: 0.8305
+Test Accuracy: 0.5249
 
 test2
 model : custom CNN
-aug : x
-epochs : 10
+aug : RandomHorizontalFlip
+epochs : 50
 batch : 8
-train Loss: 0.3700 Acc: 0.8839
-valid Loss: 0.7251 Acc: 0.7458
+train Loss: 0.0561 Acc: 0.9763
+valid Loss: 0.7940 Acc: 0.7627
+Test Accuracy: 0.4291
+
+----------
 
 test3
-model : custom CNN
-aug : RandomHorizontalFlip
-epochs : 10
+aug : Mixup
+epochs : 50
 batch : 8
-train Loss: 0.4603 Acc: 0.8387
-valid Loss: 0.9101 Acc: 0.5932
+train Loss: 0.7228 Acc: 0.7011
+valid Loss: 0.7521 Acc: 0.7288
+Test Accuracy: 0.3716
+
+--> 일반적인 augmentation을 적용하거나 다른 실험에 비해 loss가 높음
+--> 모델이 더 배울 점이 많아보임
+--> 200 epoch로 늘려 1번 실험과 비교
+
+test4
+aug : Mixup
+epochs : 200
+batch : 8
+train Loss: 0.6840 Acc: 0.7247
+valid Loss: 0.6390 Acc: 0.7797
+Test Accuracy: 0.3831
+--> 140epoch부터 val acc가 낮아지는 것으로 보아 오버피팅 예상
+--> Mixup과 aug 없는 것의 성능 차이를 확인하기 위해, 오버피팅을 고려하여 100epoch으로 각 3번의 실험
+
+test5 - Mixup 1
+aug : Mixup
+epochs : 100
+batch : 8
+train Loss: 0.6908 Acc: 0.7441
+valid Loss: 0.7665 Acc: 0.7288
+Test Accuracy: 0.3946
+
+test6 - Mixup 2
+aug : Mixup
+epochs : 100
+batch : 8
+train Loss: 0.7613 Acc: 0.7226
+valid Loss: 0.7179 Acc: 0.7627
+Test Accuracy: 0.4483
+
+test7 - Mixup 3
+aug : Mixup
+epochs : 100
+batch : 8
+train Loss: 0.8521 Acc: 0.6667
+valid Loss: 0.7902 Acc: 0.7458
+Test Accuracy: 0.3716
+
+test8 - aug X 1
+epochs : 100
+batch : 8
+train Loss: 0.0031 Acc: 0.9978
+valid Loss: 1.4972 Acc: 0.8475
+Test Accuracy: 0.5096
+
+test8 - aug X 2
+epochs : 100
+batch : 8
+train Loss: 0.0032 Acc: 0.9978
+valid Loss: 0.7674 Acc: 0.8475
+Test Accuracy: 0.5102
+
+
+Mixup               No aug
+train acc : 0.71    train acc : 0.99
+valid acc : 0.75    valid acc : 0.85
+test acc  : 0.41    test acc  : 0.51
+
+
+test9
+aug : RandomResizedCrop
+epochs : 100
+batch : 8
+train Loss: 0.9217 Acc: 0.5656
+valid Loss: 1.1024 Acc: 0.5254
+Test Accuracy: 0.4368
+
+test10
+aug : RandomRotation(degrees = 45)
+epochs : 100
+batch : 8
+train Loss: 0.1709 Acc: 0.9312
+valid Loss: 1.1579 Acc: 0.7119
+Test Accuracy: 0.3103
+
+test11
+aug : RandomAdjustSharpness
+epochs : 100
+batch : 8
+train Loss: 0.0035 Acc: 0.9957
+valid Loss: 1.0266 Acc: 0.7797
+Test Accuracy: 0.3831
+
 
