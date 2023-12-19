@@ -7,14 +7,6 @@ train Loss: 0.0035 Acc: 0.9957
 valid Loss: 1.1809 Acc: 0.8305
 Test Accuracy: 0.5249
 
-test2
-model : custom CNN
-aug : RandomHorizontalFlip
-epochs : 50
-batch : 8
-train Loss: 0.0561 Acc: 0.9763
-valid Loss: 0.7940 Acc: 0.7627
-Test Accuracy: 0.4291
 
 ----------
 
@@ -108,5 +100,44 @@ batch : 8
 train Loss: 0.0035 Acc: 0.9957
 valid Loss: 1.0266 Acc: 0.7797
 Test Accuracy: 0.3831
+
+test12
+model : custom CNN
+aug : RandomHorizontalFlip
+epochs : 50
+batch : 8
+train Loss: 0.0561 Acc: 0.9763
+valid Loss: 0.7940 Acc: 0.7627
+Test Accuracy: 0.4291
+
+
+test13
+model : custom CNN
+aug : GaussianBlur
+epochs : 50
+batch : 8
+train Loss: 0.0037 Acc: 0.9978
+valid Loss: 1.3282 Acc: 0.8644
+Test Accuracy: 0.5594
+-> 가장 좋은 성능
+
+test13
+model : custom CNN
+aug : Autoaugment
+epochs : 50
+batch : 8
+train Loss: 0.1976 Acc: 0.9247
+valid Loss: 0.8024 Acc: 0.8305
+Test Accuracy: 0.4215
+-> 실험 내내 loss가 낮았음
+
+test13
+model : custom CNN
+aug : histgram-equlization
+epochs : 50
+batch : 8
+train Loss: 1.0794 Acc: 0.4194
+valid Loss: 1.1208 Acc: 0.3898
+Test Accuracy: 0.1954
 
 
