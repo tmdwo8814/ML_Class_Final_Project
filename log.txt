@@ -10,7 +10,7 @@ Test Accuracy: 0.5249
 
 ----------
 
-test3
+test2
 aug : Mixup
 epochs : 50
 batch : 8
@@ -22,7 +22,7 @@ Test Accuracy: 0.3716
 --> 모델이 더 배울 점이 많아보임
 --> 200 epoch로 늘려 1번 실험과 비교
 
-test4
+test3
 aug : Mixup
 epochs : 200
 batch : 8
@@ -32,7 +32,7 @@ Test Accuracy: 0.3831
 --> 140epoch부터 val acc가 낮아지는 것으로 보아 오버피팅 예상
 --> Mixup과 aug 없는 것의 성능 차이를 확인하기 위해, 오버피팅을 고려하여 100epoch으로 각 3번의 실험
 
-test5 - Mixup 1
+test4 - Mixup 1
 aug : Mixup
 epochs : 100
 batch : 8
@@ -40,7 +40,7 @@ train Loss: 0.6908 Acc: 0.7441
 valid Loss: 0.7665 Acc: 0.7288
 Test Accuracy: 0.3946
 
-test6 - Mixup 2
+test5 - Mixup 2
 aug : Mixup
 epochs : 100
 batch : 8
@@ -48,7 +48,7 @@ train Loss: 0.7613 Acc: 0.7226
 valid Loss: 0.7179 Acc: 0.7627
 Test Accuracy: 0.4483
 
-test7 - Mixup 3
+test6 - Mixup 3
 aug : Mixup
 epochs : 100
 batch : 8
@@ -56,7 +56,7 @@ train Loss: 0.8521 Acc: 0.6667
 valid Loss: 0.7902 Acc: 0.7458
 Test Accuracy: 0.3716
 
-test8 - aug X 1
+test7 - aug X 1
 epochs : 100
 batch : 8
 train Loss: 0.0031 Acc: 0.9978
@@ -121,7 +121,7 @@ valid Loss: 1.3282 Acc: 0.8644
 Test Accuracy: 0.5594
 -> 가장 좋은 성능
 
-test13
+test14
 model : custom CNN
 aug : Autoaugment
 epochs : 50
@@ -131,7 +131,7 @@ valid Loss: 0.8024 Acc: 0.8305
 Test Accuracy: 0.4215
 -> 실험 내내 loss가 낮았음
 
-test13
+test15
 model : custom CNN
 aug : histgram-equlization
 epochs : 50
